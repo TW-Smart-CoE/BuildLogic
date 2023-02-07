@@ -1,0 +1,19 @@
+desc "Build"
+lane :build do
+  gradle(task: "build")
+end
+
+desc "Runs all the static check"
+lane :check do
+  gradle(task: "detekt")
+end
+
+desc "Runs all the unit tests"
+lane :unit_test do
+  gradle(task: "test")
+end
+
+before_all do |lane|
+  sh "export LC_ALL=en_US.UTF-8"
+  sh "export LANG=en_US.UTF-8"
+end
