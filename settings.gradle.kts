@@ -12,12 +12,15 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         mavenLocal()
-        maven {
-            url = uri(readConfig("MAVEN_REPO"))
-            isAllowInsecureProtocol = true
-            credentials {
-                username = readConfig("MAVEN_USER")
-                password = readConfig(("MAVEN_PWD"))
+
+        if (readConfig("MAVEN_REPO").isNotEmpty()) {
+            maven {
+                url = uri(readConfig("MAVEN_REPO"))
+                isAllowInsecureProtocol = true
+                credentials {
+                    username = readConfig("MAVEN_USER")
+                    password = readConfig(("MAVEN_PWD"))
+                }
             }
         }
     }
