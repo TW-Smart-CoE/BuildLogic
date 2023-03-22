@@ -22,4 +22,9 @@ gradlePlugin {
         id = "build.logic"
         implementationClass = "BuildLogicPlugin"
     }
+
+    plugins.register("buildSettingPlugin") {
+        id = "build.setting"
+        implementationClass = "BuildSettingPlugin"
+    }
 }
