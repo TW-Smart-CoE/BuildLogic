@@ -57,9 +57,9 @@ fun VersionCatalog.getPlugin(name: String): String {
 
 fun String.getFlavor(): Flavor {
     return when (this) {
-        Flavor.Dev.name.toLowerCase(Locale.getDefault()) -> Flavor.Dev
-        Flavor.Uat.name.toLowerCase(Locale.getDefault()) -> Flavor.Uat
-        Flavor.Staging.name.toLowerCase(Locale.getDefault()) -> Flavor.Staging
+        Flavor.Dev.name.lowercase(Locale.getDefault()) -> Flavor.Dev
+        Flavor.Uat.name.lowercase(Locale.getDefault()) -> Flavor.Uat
+        Flavor.Staging.name.lowercase(Locale.getDefault()) -> Flavor.Staging
         else -> Flavor.Prod
     }
 }
